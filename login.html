@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background-color: yellowgreen;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        fieldset{
+            padding-top: 50px;
+            height: 400px;
+            width: 300px;
+            margin: 20px;
+        }
+        form{
+            margin: 40px;
+        }
+        .input-box{
+            margin: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <fieldset class="container-fluid">
+        <legend><b>login your account</b></legend>
+        <form action="action.ph">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="password">
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox" name="remeber me">Remember Me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="register-link">
+                <p>Don't have an acccount?<a href="#">Register</a></p>
+            </div>
+        </form>
+    </fieldset>
+</body>
+</html>
