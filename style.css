@@ -1,0 +1,125 @@
+/* universal selector */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Element selector */
+h1{
+    text-align: center;
+    text-decoration: underline;
+    background-color: aqua;
+    color: black;
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: 900;
+}
+p{
+    text-align: center;
+    background-color: yellowgreen;
+    color: #fff;
+    text-overflow: clip;
+    font-style: italic;
+    font-size: 40px;
+}
+/* class selector */
+.container p{
+    text-align: end;
+    text-decoration: underline;
+    font-style: normal;
+    background-color: cadetblue;
+}
+.container2 p{
+    text-align: start;
+    text-decoration: overline;
+    font-style: normal;
+    background-color: red   ;
+}
+/* id selector */
+#main{
+    height: 300px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#main img{
+    height: auto;
+    width: 500px;
+}
+/* attribute selectors
+[attribute]:- for all attribute
+[attribute="value"]:- if attribute value same then apply for all
+[attribute*="value"] :- if common value available then apply to all 
+[attribute^="value"] :- comman value available in start of all attribute then aapply to all 
+[attribute$="value"] :- comman value available in end of all attribute then aapply to all
+[attribute~="value"] :- if same value available in attribute after space then apply for all
+[attribute|="value"] :- if 1st value same in all attribute then apply to all 
+*/
+img{
+    height: 200px;
+    width: 400px;
+}
+/* img[alt]{
+    border: 2px dotted black;
+} */
+/* img[alt="img"]{
+    border: 2px dashed yellowgreen;
+} */
+/* img[alt^="img2"]{
+    border: 2px double saddlebrown;
+} */
+/* img[alt*="mg"]{
+    border: 3px solid black;
+} */
+/* img[alt$="mg"]{
+    border: 2px solid yellow;
+} */
+/* img[alt~="1"]{
+    border: 5px solid burlywood;
+} */
+img[alt|="i"]{
+    border: 4px solid grey;
+}
+/* pseudo classes */
+.pseudo{
+    text-align: center;
+    height: 200px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1:hover{
+    cursor: pointer;
+    background-color: red;
+}
+h1:active{
+    color: blue;
+}
+/* pseudo element */
+h2::first-letter{
+    font-weight: 900;
+    font-size: 40px;
+}
+h2::first-line{
+    background-color: aqua;
+}
+/* descendent selectors */
+div img{
+    height: 500px;
+    width:600px;
+}
+/* child selector */
+div > img{
+    border: 2px solid black;
+}
+/* adjacent sibling selector */
+h1+p{
+    background-color: aquamarine;
+}
+/* general siblings */
+h1~p{
+    background: #fff;
+}
+/* .class selector */
