@@ -60,12 +60,48 @@
 
 // function multiply(num1,numb)
 
-let a= 10;
-b=12;
-const multiply = setInterval(()=>{
-let c=a*b;
-console.log(c)
-},2000);
-setTimeout(()=>{
-clearInterval(multiply)
-},2000);
+// let a= 10;
+// b=12;
+// const multiply = setInterval(()=>{
+// let c=a*b;
+// console.log(c)
+// },2000);
+// setTimeout(()=>{
+// clearInterval(multiply)
+// },2000);
+
+// Q5
+
+// function multi(a,b){
+//     return a*b
+// }
+// setTimeout(()=> {
+//     console.log(multi(5,6));
+// },2000)
+
+// function multi(a,b){
+//     let total=0;
+//     setTimeout(()=>{
+//         total= a*b;
+//     });
+//     return total;
+// }
+// console.log(multi(6,7));
+
+function delayedmultiplication(a,b,result){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            const product=a*b;
+            if(result==product){
+                resolve(product)
+            }else{
+                reject("product invalid")
+            }
+        },2000);
+    });
+}
+delayedmultiplication(5,6,40).then((result)=>{
+    console.log(result);
+}).catch((arr)=>{
+    console.log(arr);
+});
