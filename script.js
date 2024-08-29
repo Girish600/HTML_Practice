@@ -26,21 +26,25 @@ const users = [
 
 // Q2
 
-// function fetchUserByIdCallback(id, callback){
-//     // if(!id)return callback("id not found")
-//     // if(typeof id !=="number")return callback ("Invalid id number")
-//         setTimeout(()=>{
-//     let user = users.find((ele)=>ele.id== id);
-//     if(user){
-//         callback(user)
-//     }else{
-//         callback(`data not found ${id}`)
-//     }
-//     },2000)
-// }
-// fetchUserByIdCallback(6, (result)=>{
-//     console.log(result);
-// })
+function fetchUserByIdCallback(id, callback){
+    if(!id)return callback("id not found", null)
+    if(typeof id !=="number")return callback ("Invalid id number", null)
+        setTimeout(()=>{
+    let user = users.find((ele)=>ele.id== id);
+    if(user){
+        callback(user)
+    }else{
+        callback(`data not found ${id}`,null)
+    }
+    },2000)
+}
+fetchUserByIdCallback(2, (err, result)=>{
+    if (err) {
+        console.error("error =>", err)
+    }else{
+    console.log(result);
+    }
+})
 
 // Q3: Promise creation
 
@@ -67,25 +71,25 @@ const users = [
 
 // Q5:- async/await
 
-function fetchUserByIdPromise(id){
-    return new Promise ((resolve, reject)=>{
-        setTimeout(()=>{
-            let user = users.find((ele)=>ele.id== id);
-            if(user){
-                resolve(user)
-            }else{
-                reject(`data not found ${id}`);
-            }
-        },2000)
-    });
-}
-async function getUserData(id) {
-    try{
-        const user= await fetchUserByIdPromise(id);
-        console.log(user);
-    }   catch(error){
-        console.log("error-", error);       
-    }
-}
+// function fetchUserByIdPromise(id){
+//     return new Promise ((resolve, reject)=>{
+//         setTimeout(()=>{
+//             let user = users.find((ele)=>ele.id== id);
+//             if(user){
+//                 resolve(user)
+//             }else{
+//                 reject(`data not found ${id}`);
+//             }
+//         },2000)
+//     });
+// }
+// async function getUserData(id) {
+//     try{
+//         const user= await fetchUserByIdPromise(id);
+//         console.log(user);
+//     }   catch(error){
+//         console.log("error-", error);       
+//     }
+// }
 
-getUserData(6);
+// getUserData(6);
